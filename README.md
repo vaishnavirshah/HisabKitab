@@ -22,3 +22,11 @@ Firebase authentication was also one step where we got stuck followed by generat
 - HTML/CSS
 - Nodejs
 - Express
+
+
+### Created for KJ Somaiya Hackthon by
+#### Team TLE <br>
+[Vaishnavi Shah](https://github.com/vaishnavirshah) <br>
+[Dhruvin Gandhi](https://github.com/dhruvin5) <br>
+[Siddharth Shah](https://github.com/sid-1207) <br>
+[Bhavya Mehta](https://github.com/bhavya092)
