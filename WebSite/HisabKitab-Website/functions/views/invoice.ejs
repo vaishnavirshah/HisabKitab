@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Invoice</title>
+
+    <style>
+      .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+        color: #555;
+      }
+
+      .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+      }
+
+      .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+      }
+
+      .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+      }
+
+      .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+      }
+
+      .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+      }
+
+      .invoice-box table tr.details td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+      }
+
+      .invoice-box table tr.item.last td {
+        border-bottom: none;
+      }
+
+      .invoice-box table tr.total td {
+        padding-top: 40px;
+        font-weight: bold;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      /** RTL **/
+      .rtl {
+        font-family: Tahoma, "Helvetica Neue", "Helvetica", Helvetica, Arial,
+          sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="invoice-box">
+      <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+          <td colspan="4">
+            <table>
+              <tr>
+                <td class="title" id="companyName"><%= snapData.company %></td>
+
+                <td style="text-align: end">
+                  Invoice #: <span id="invoiceNo"><%= counter %></span><br />
+                  Created: <span id="date"><%= today %></span><br />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="information">
+          <td colspan="4">
+            <table>
+              <tr>
+                <td style="text-align: start; max-width: 70px">
+                  <span id="Address"><%= snapData.address %></span>
+                </td>
+                <td style="text-align: end">
+                  <span id="SellcompName"> <%= snapData.sellerCompany %></span><br />
+                  <span id="SellName"><%= snapData.sellerEmail %></span><br />
+                  <span id="SellPhoneNo"><%= snapData.sellerPhone %></span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="heading">
+          <td>Serial No.</td>
+
+          <td>Item</td>
+          <td style="text-align: end">Quantity</td>
+          <td style="text-align: end">Price</td>
+        </tr>
+        
+        <tr class="item">
+          <% for(i=0 ;i<snapData.items.length; i++){ %> 
+          <td> <%= i+1  %>  </td>
+          <td>  <%= snapData.items[i]  %>  </td>
+          <td style="text-align: end"><%= snapData.quantities[i]  %></td>
+          <td style="text-align: end"><%= snapData.prices[i]  %></td>
+        </tr>
+          <% } %> 
+        
+
+        <tr class="total" style="text-align: end; margin-top: 10px">
+          <td></td>
+          <td></td>
+          <td></td>
+          <% var totalp =0 %> 
+          <% for(i=0 ;i<snapData.prices.length; i++){ %> 
+            <% totalp += parseInt(snapData.prices[i]) %> 
+              <% } %> 
+          <td>Total: <%= totalp %>  </td>
+        </tr>
+      </table>
+    </div>
+    <div class="" style="text-align: center; margin-top: 20px">
+      <input
+        type="submit"
+        value="Save as PDF"
+        id="btn"
+        onclick="none(); window.print(); "
+      />
+    </div>
+    <script>
+      function none() {
+        document.getElementById("btn").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

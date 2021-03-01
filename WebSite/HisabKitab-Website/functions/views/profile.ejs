@@ -1,0 +1,97 @@
+doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/stylesheets/pages.css" rel="stylesheet">
+    <title>HisabKitab</title>
+  </head>
+  <body>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <div class="profileinfo">
+            <div id="profilephoto"></div>
+            <br>
+            <b style="color:white;font-size: 20px;">HisabKitab</b>
+            <br>
+            <div style="color:white;font-size: small;">Simple GST billing and stock management software.</div>
+            
+            <br>
+            <br>
+            
+          </div>
+        <a href="/<%=userid%>/analytics" style="color:white;font-weight:600">Analytics</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/sales">Sales</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/purchases">Purchases</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/profile">My Profile</a>
+        <hr class="navhr">
+    </div>
+  
+    <!-- Page content -->
+    <div class="main">
+    <br>
+    <b style="font-size: 20px;"><i> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+        <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com//dxjqoygy.json"
+            trigger="loop"
+            colors="primary:#121331,secondary:#e8b730"
+            style="width:100px;height:100px">
+        </lord-icon> My Profile</i></b>
+    <hr>
+    <div class="container">
+        <br><br>
+        <div class='row'>
+            <div class="col-4" >
+                <div style="font-weight: 600; ">Name: <%= name %></div>
+                
+            </div>
+            <br>
+            <br>
+            <div class="col-4">
+                <div style="font-weight: 600; ">Email : <%= email %></div>
+
+                
+            </div>
+
+            <br>
+            <br>
+
+            <div class="col-4">
+                <div style="font-weight: 600; ">Phone : <%= phone %></div>
+
+                
+            </div>
+            <div class="col-4">
+                <div style="font-weight: 600; ">GST : <%= gst %></div>
+
+                
+            </div>
+
+            <div class="col-4">
+                <div style="font-weight: 600; ">Company : <%= company %></div>
+
+                
+            </div>
+            <div class="col-4">
+                <div style="font-weight: 600; ">Address :<%= address %></div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+  </body>
+</html>

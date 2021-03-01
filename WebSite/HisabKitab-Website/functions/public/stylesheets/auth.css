@@ -1,0 +1,9 @@
+#image{
+    margin: 10px 10px;
+    width:auto;
+    height:350px;
+    background-image: url('../images/auth.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat"
+}

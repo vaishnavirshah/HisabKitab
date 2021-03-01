@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Database</h1>
+    <div class="row">
+      <div class="container">
+        <h2>Contact Form</h2>
+        <div class="alert alert-success success-message" style="display: none">
+          Form submitted successfully.
+        </div>
+        <form id="contactForm" method="POST" action="/">
+          <div class="form-group">
+            <label for="exampleFullName">Full Name</label>
+            <input
+              type="text"
+              class="form-control fullname"
+              name="form1"
+              id="exampleFullName"
+              placeholder="Enter Full Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleEmail">Email</label>
+            <input
+              type="email"
+              class="form-control email"
+              id="exampleEmail"
+              placeholder="Enter Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleSubject">Subject</label>
+            <input
+              type="text"
+              class="form-control subject"
+              id="exampleSubject"
+              placeholder="Enter Subject"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleMessage">Message</label>
+            <textarea
+              class="form-control message"
+              id="exampleMessage"
+              placeholder="Enter Message"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+  </body>
+</html>

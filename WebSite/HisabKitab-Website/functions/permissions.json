@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hisab--kitab",
+  "private_key_id": "cd2e6d3da3894cc84b5db92054dca610b990fdbf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDEHy+EZA/ZSlKu\n8ke1T76BmFH2YMT3hLh6dvlgBbZfxsknMzuXj73oURj71K7EA9X5P+XioHGsuVjy\nEfQZRX0+MWz9pR+eUgsXsi7aUjJYv9I5oSXhXFZ1Bljp6E1CWCiPtBnKF310QQrq\n7nP3Yx7lO7vmBGRXvkV/JNdZDoMzk7srF6GIc8gD1QnIeduRKvh/f9xQ9KW6jxp3\ntQ2aoEoAmC9SWSlRWZ81oDohWuvySymFY1Gi6YCQkZTEMa/fA7KvXy8m9703mz5z\nzp2yWXYChWdbynzr3lJ/tIGScZU+HTWNwPGoq3u4B2nDuqx1DO4h0IF6xV2VfqFa\nqax8y0uZAgMBAAECggEAYfrojN5Gsrp4a3GcVJ9F4E3eaNX4oWYbmgc1V/0Sm2/f\nD+f/Fh2YdWeKsUmUlFYMQO1k5p9cmzuwDaPdjQCT7Q3ZUzD7BmgbpZd949Gb2I3g\ns6zoFVpB0U49/oHxkzsi7IRAPCAXK4zRLQS7R/Urur9ohKZeER38b2RS9+mRr6J3\nBIyb7Raj2JlugM1+YW6IXWLk8Rdi4sfZTHJaqoLwJlt+8pfqDIhYiBqpkIMCZ5QY\nkht4q0JtzcNEs9xPpd5Wa6a49uwPUIOFDil9kSK0xfVxmXqFrGBB6J2ydHka/KhF\nd/EFNtG65IgS1vSKxKXqQXKMgnljvC1nBgrG1BBiHwKBgQDq7nhxFfQW8ss3MN6d\n9awpmv5tgSh/RhiKP48ab/EkI+QLWy0FCGDaGVJSpVigoP4qn3ADiwmlDculpaf1\nu+s3bvRwdgqAFXF1YFWf5gLhQquleqR/xXo7NPsdZ9z4bWZUmLvDLaeuCZMIeoTJ\nwjeBvr40VtyRtXG3rxqhA54QPwKBgQDVtboCDH9xJVN3ok52WGQWxIxMZ7PxfSnl\nMCX88vpoHtSKECGV0JUOVpCT813bcPaMs+bb9sjPnO00UZtFwKQglasbyOkn0Jo7\nN71ogS15a9zva7tvyVP2YioIWDrxVK+vN0vs0L2pvH1aZro7pt6UeaVdrEk7bAKd\nItMi1FSuJwKBgB3qGaoEqp0Vc2zmqyIf+zkdBFK7RIXYTh2kdDtgj6sTauFLTdM7\nOuHqoYHmjf9+IH8a6C97T9IVjJ3eFyICOLRJS5TaYwHmORlCGAURS8KVM7gRgsrG\nQYcyettGs2tqusIA5L+4m4Zcr70/pJLwSRMbT6roeJORMBa8lD52cHUPAoGAGrx0\ne+MiYn5f9dyZYlbmlq6aOsjSi0i0YBbo+b9QMoyA3JDuErcYnsWXqtrMiDKWtb2g\nCS7Tqp2gU2ZOPai/H9B5qq009iUz1mq/yH44uTMUXeOlfHO8jFt1lLutDBojLJGH\nbyYiRETvjcrCS8oxmHOri4+NTeDSZuQ/c+EKgwsCgYAzODwUnYAo07z9EcccMrQS\n1N3S+ucsEP6szJ7ZLPXG11amIzQ6UOBGFn1TqYGfU/KPdFHUFxeGqW4V48lSOjWy\nOWr3lr45DVuNd/69c3lNNygPNaTSs66sUj81lfgpaQUEAyrKTOBW9GaeVRc8pZ3h\nziArLlJbVpa7D0tJ3wybXA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fnsyv@hisab--kitab.iam.gserviceaccount.com",
+  "client_id": "114381073391703652802",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fnsyv%40hisab--kitab.iam.gserviceaccount.com"
+}

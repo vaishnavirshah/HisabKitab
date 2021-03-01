@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/stylesheets/pages.css" rel="stylesheet">
+    <title>HisabKitab</title>
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidenav">
+        <div class="profileinfo">
+            <div id="profilephoto"></div>
+            <br>
+            <b style="color:white;font-size: 20px;">HisabKitab</b>
+            <br>
+            <div style="color:white;font-size: small;">Simple GST billing and stock management software.</div>
+            
+            <br>
+            <br>
+            
+          </div>
+        <a href="/<%=userid%>/analytics" >Analytics</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/sales" style="color:white;font-weight:600">Sales</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/purchases">Purchases</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/profile">My Profile</a>
+        <hr class="navhr">
+    </div>
+    <div class="main">
+        <br>
+        <b style="font-size: 20px;"><i> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+            <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com//yeallgsa.json"
+                trigger="loop"
+                colors="primary:#121331,secondary:#e88c30"
+                style="width:100px;height:100px">
+            </lord-icon> Purchases </i></b>
+        <hr>
+        <div class="container mx-auto px-auto">
+            <b>Enter Purchase Invoice</b>
+        </div>
+        <br>
+        <form action="/<%=userid%>/purchases" method="POST">
+            <div class="container mx-auto px-auto">
+                <div class="row">
+                    
+                    <div class="row">
+                        <div class="col-6">                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><small>Company Name *</small></label>
+                            <input required type="text" class="form-control" placeholder="Company" name="company">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><small>Company Address *</small></label>
+                            <input required type="text" class="form-control" placeholder="Company-Address" name="address">
+                        </div>
+                    </div>
+                    </div>
+                   
+                       
+                        <div id="inputs" class="row">
+                           
+                        <div class="form-group col-4" id="item1">
+                            <label for="exampleInputEmail1"> <small>Item</small></label>
+                            <input required type="text" class="form-control" placeholder="Item"
+                                name="Item[]">
+                        </div>
+                    
+                    
+                        <div class="form-group col-4">
+                            <label for="exampleInputEmail1"> <small>Price</small></label>
+                            <input required type="text" class="form-control" placeholder="Price"
+                                name="Price[]">
+                        </div>
+               
+                    
+                        <div class="form-group col-4">
+                            <label for="exampleInputEmail1"> <small>Quantity</small></label>
+                            <input required type="text" class="form-control" placeholder="Quantity"
+                                name="Quantity[]">
+                        </div>
+                    
+               
+            </div>
+                    </div>
+                        </div>
+                    </div>
+                </div><div class="ml-3 p-3" style="text-align: center;">
+                <button class="btn btn-outline-warning btn-sm" id='btn' type="button" onclick="addInput();">Add more items</button>
+            </div>
+                </div>
+    
+            </div>
+            <br>
+        
+            <div class="container ml-5 px-3" style="text-align: center;">
+                    <button class="btn btn-outline-dark" style="color:orange;font-weight:500">
+                        <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com//jvihlqtw.json" trigger="loop"
+                            colors="primary:#eeaa66,secondary:#eeaa66"
+                            style="width:50px;height:50px; font-size:bold;">
+                        </lord-icon><b>Create Invoice</b>
+                    </button>
+                <br><br>
+            </div>
+    
+    
+            <br>
+            
+    
+        </form>
+      
+        <hr>
+        <br>
+    <div class="container">
+        <h2 style="text-align: center;">Past Purchases</h2>
+    </div>
+    <br>
+    
+    <% for(i=0 ;i<purchases.length; i++){ %> 
+
+        <div class="container" style="border-radius: 10px;border: 2px solid orange;margin-left: 290px;height:40px;justify-content: center;width:1000px;">
+            <div class="row">
+                <div class="col-4">
+                    Billed by: <b><%=purchases[i].company%></b>
+                </div>
+                <div class="col-4">
+                    <small>Date:  <i><%=purchases[i].date%></i></small>
+                    
+                </div>
+                <div class="col-4">
+                    Amount : Rs.<b><i><%=total[i]%></i></b>
+                </div>
+                <br>
+            </div>
+        </div> 
+        <br>
+
+
+            
+    </div>              <% } %> 
+        </div>
+</div>
+<script >
+function addInput(){
+    console.log(111);
+    //var InputBox= document.createElement('div');
+   // InputBox.className+="row";
+    var InputBox1 = document.createElement('div');
+    var InputBox2 = document.createElement('div');
+    var InputBox3 = document.createElement('div');
+    InputBox1.className+="col-4";
+    InputBox2.className+="col-4";
+    InputBox3.className+="col-4";
+
+
+    // Then add the content (a new input box) of the element.
+	InputBox1.innerHTML = '<label for="exampleInputEmail1"> <small>Item</small></label> <input required type="text" class="form-control " placeholder="Item" name="Item[]">';
+    InputBox2.innerHTML = '<label for="exampleInputEmail1"> <small>Price</small></label> <input required type="number" class="form-control " placeholder="Price" name="Price[]">';
+	InputBox3.innerHTML = '<label for="exampleInputEmail1"> <small>Quantity</small></label> <input required type="number" class="form-control" placeholder="Quantity" name="Quantity[]">';
+
+    //document.getElementById(inputs).append('<div><input required type="text" class="form-control" placeholder="Your address" name="Item[]"></div>');
+    document.getElementById("inputs").appendChild(InputBox1);
+    document.getElementById("inputs").appendChild(InputBox2);
+    document.getElementById("inputs").appendChild(InputBox3);
+}
+    //   var newdiv1= document.createElement('input');
+        //   newdiv1.type="text";
+        //   newdiv1.placeholder="Item description";
+        //   newdiv1.name="Item[]";
+        //   var newdiv2= document.createElement('input');
+        //   newdiv2.type="text";
+        //   newdiv2.placeholder="Item description";
+        //   newdiv2.name="Price[]";
+        //   var newdiv3= document.createElement('input');
+        //   newdiv3.type="text";
+        //   newdiv3.placeholder="Item description";
+        //   newdiv3.name="Quantity[]";
+       
+        //   document.getElementById(inputs).appendChild(newdiv2);
+        //   document.getElementById(inputs).appendChild(newdiv3);
+
+
+</script>
+
+</body>
+</html>

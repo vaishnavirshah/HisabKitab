@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/stylesheets/pages.css" rel="stylesheet">
+    <title>HisabKitab</title>
+  </head>
+  <body>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <div class="profileinfo">
+          <div id="profilephoto"></div>
+          <br>
+          <b style="color:white;font-size: 20px;">HisabKitab</b>
+          <br>
+          <div style="color:white;font-size: small;">Simple GST billing and stock management software.</div>
+          
+          <br>
+          <br>
+          
+        </div>
+        <a href="/<%=userid%>/analytics" style="color:white;font-weight:600">Analytics</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/sales">Sales</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/purchases">Purchases</a>
+        <hr class="navhr">
+        <a href="/<%=userid%>/profile">My Profile</a>
+        <hr class="navhr">
+    </div>
+  
+    <!-- Page content -->
+    <div class="main">
+    <br>
+    <b style="font-size: 20px;"><i> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+      <lord-icon
+          src="https://cdn.lordicon.com//nocovwne.json"
+          trigger="loop"
+          colors="primary:#121331,secondary:#c76f16"
+          style="width:50px;height:50px">
+      </lord-icon> Analytics</i></b>
+    <hr>
+      <div class="d-flex flex-row">
+        <div id="curve_chart" style="width: 500px; height: 500px"></div>
+        <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <b style="margin-left:280px;">All Invoices and transactions</b>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="height:300px; overflow-y: scroll;">
+      <% for(i=0 ;i<sales.length; i++){ %> 
+
+        <div class="container" style="border-radius: 10px;border: 2px solid orange;margin-left: 290px;height:40px;justify-content: center;width:1000px;">
+            <div class="row">
+                <div class="col-4">
+                    Billed to : <b><%=sales[i].company%></b>
+                </div>
+                <div class="col-4">
+                    <small>Date:  <i><%=sales[i].date%></i></small>
+                    
+                </div>
+                <div class="col-4">
+                    Amount : Rs.<b><i><%=totalsales[i]%></i></b>
+                </div>
+                <br>
+            </div>
+          
+        </div> 
+        <br>
+
+
+            
+                <% } %> 
+                <% for(i=0 ;i<purchases.length; i++){ %> 
+
+                  <div class="container" style="border-radius: 10px;border: 2px solid orange;margin-left: 290px;height:40px;justify-content: center;width:1000px;">
+                      <div class="row">
+                          <div class="col-4">
+                              Billed by: <b><%=purchases[i].company%></b>
+                          </div>
+                          <div class="col-4">
+                              <small>Date:  <i><%=purchases[i].date%></i></small>
+                              
+                          </div>
+                          <div class="col-4">
+                              Amount : Rs.<b><i><%=totalpurchases[i]%></i></b>
+                          </div>
+                          <br>
+                      </div>
+                  </div> 
+                  <br>
+          
+          
+                      
+                           <% } %> 
+              
+        <br>
+        <br>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Sales', 'Purchases'],
+          ['Nov-20',  1000,      400],
+          ['Dec-20',  1170,      460],
+          ['Jan-21',  660,       1120],
+          ['Feb-21',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+  </body>
+</html>
